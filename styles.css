@@ -1,0 +1,45 @@
+.timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.field:not(:last-child) {
+    margin-right: 20px;
+}
+
+
+.field:nth-child(n+2):not(:last-child)::after{
+    content: ":";
+    display: inline-block;
+    position: absolute;
+    right: -15px;
+    top: 7px;
+    font-size: 40px;
+    color: #d9b721;
+}
+
+.value{
+    font-size: 40px;
+    padding: 10px;
+    text-align: center;
+    color: #d9b721;
+    
+}
+
+.label{
+    padding: 10px 20px;
+    background-color: #2d8053;
+    color: #ffffff;
+    border-radius: 30px;
+    
+}
