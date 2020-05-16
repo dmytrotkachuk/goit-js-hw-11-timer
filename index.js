@@ -28,6 +28,10 @@ class CountdownTimer{
   computedTime(){
     const currentTime = Date.now()
     const time = this.targetDate - currentTime
+    if (time <= 0){
+      clearInterval(this.timerId)
+      this.nullifyCountdown()
+    }
     this.counting(time)
   }
 
@@ -46,6 +50,12 @@ class CountdownTimer{
     this.secs.textContent = String(secs).padStart(2, '0')
   }
 
+  nullifyCountdown (){
+    this.days.textContent = 0
+    this.hours.textContent = String(0).padStart(2, '0')
+    this.mins.textContent = String(0).padStart(2, '0')
+    this.secs.textContent = String(0).padStart(2, '0')
+  }
 }
 
 
